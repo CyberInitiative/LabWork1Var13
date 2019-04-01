@@ -1,32 +1,31 @@
-﻿// Вариант 13. Реализовать функцию возведения в квадрат частного двух целых чисел.
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LabWork1
+// Вариант 13. Реализовать функцию возведения в квадрат частного двух целых чисел.
+namespace LabWork1Var13
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine();
-            Program method = new Program();
-            Console.WriteLine("Введите число №1");
-            string s = Console.ReadLine();
-            int a = Convert.ToInt32(s);
-            Console.WriteLine("Введите число №2");
-            string r = Console.ReadLine();
-            int b = Convert.ToInt32(r);
-            if (b == 0)
-                Environment.Exit(0);
-            Console.WriteLine("Квадрат частного двух целых чисел: " + method.LabWorkMethod(a, b));
-            Console.ReadLine();
+            string a = Console.ReadLine();
+            int x = Convert.ToInt32(a);
+            string b = Console.ReadLine();
+            int y = Convert.ToInt32(b);
+            var res = SquareQuotient(x, y); 
+            Console.WriteLine("Ответ: {0}", res); 
+            Console.ReadKey();
         }
-        public int LabWorkMethod(int a, int b)
+        
+        static int SquareQuotient(int x, int y)
         {
-            return ((a / b) * (a / b));
+            int quotient = x / y;
+            int result = quotient * quotient;
+
+            return result;
         }
     }
 }
